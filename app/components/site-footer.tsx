@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaTiktok, FaWhatsapp, FaXTwitter } from "react-icons/fa6";
 
 export default function SiteFooter() {
   return (
@@ -33,6 +35,62 @@ export default function SiteFooter() {
           <div className="mt-4 flex flex-col items-start gap-3 text-sm text-white/75">
             <Link href="mailto:ofmsmasepro@gmail.com" className="transition-colors hover:text-white">ofmsmasepro@gmail.com</Link>
             <Link href="tel:+243895777619" className="transition-colors hover:text-white">+243 895 777 619</Link>
+          </div>
+          <div aria-label="Réseaux sociaux" className="mt-5 flex items-center gap-4">
+            <Link
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="text-white transition-opacity hover:opacity-75"
+            >
+              <FaFacebookF size={20} aria-hidden="true" />
+            </Link>
+            <Link
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="text-white transition-opacity hover:opacity-75"
+            >
+              <FaInstagram size={22} aria-hidden="true" />
+            </Link>
+            <Link
+              href="https://youtube.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+              className="text-white transition-opacity hover:opacity-75"
+            >
+              <FaYoutube size={22} aria-hidden="true" />
+            </Link>
+            <Link
+              href="https://www.tiktok.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok"
+              className="text-white transition-opacity hover:opacity-75"
+            >
+              <FaTiktok size={20} aria-hidden="true" />
+            </Link>
+            <Link
+              href="https://x.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="X"
+              className="text-white transition-opacity hover:opacity-75"
+            >
+              <FaXTwitter size={20} aria-hidden="true" />
+            </Link>
+            <Link
+              href="https://wa.me/243895777619"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+              className="text-white transition-opacity hover:opacity-75"
+            >
+              <FaWhatsapp size={22} aria-hidden="true" />
+            </Link>
           </div>
           <Link
             href="https://www.smardc.org/"
