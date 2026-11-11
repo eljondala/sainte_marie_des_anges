@@ -65,7 +65,7 @@ const navigation: NavItem[] = [
       [
         {
           title: "GOUVERNEMENT PROVINCIAL",
-          links: [{ label: "Le gouvernement de la Province", href: "#offices" }],
+          links: [{ label: "Définitoire provincial", href: "#offices" }],
         },
         {
           title: "OFFICES ET SECRÉTARIATS",
@@ -119,11 +119,11 @@ const navigation: NavItem[] = [
       [
         {
           title: "ACTUALITÉS DE LA PROVINCE",
-          links: [{ label: "Nouvelles et événements", href: "#actualites" }],
+          links: [{ label: "Nouvelles et événements", href: "/actualites" }],
         },
         {
           title: "COMMUNIQUÉS",
-          links: [{ label: "Communiqués provinciaux", href: "#actualites" }],
+          links: [{ label: "Communiqués provinciaux", href: "/actualites" }],
         },
       ],
       [
@@ -167,8 +167,8 @@ const navigation: NavItem[] = [
         {
           title: "SOUTENIR LA MISSION",
           links: [
-            { label: "Soutenir la Province", href: "#don" },
-            { label: "Faire un don", href: "#don" },
+            { label: "Soutenir la Province", href: "/dons" },
+            { label: "Faire un don", href: "/dons" },
           ],
         },
       ],
@@ -211,7 +211,7 @@ export default function SiteHeader() {
 
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-5 py-3 sm:px-8 lg:px-10">
         <Link
-          href="#accueil"
+          href="/#accueil"
           aria-label="Province Sainte Marie des Anges, accueil"
           className="flex min-w-0 items-center gap-3"
           onClick={closeMenus}

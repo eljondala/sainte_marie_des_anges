@@ -10,49 +10,97 @@ const offices = [
   },
   {
     number: "02",
-    title: "Office de la formation et des études",
+    title: "Secrétariat pour la formation et les études",
     description: "Accompagnement de la formation initiale et permanente des frères.",
   },
   {
     number: "03",
-    title: "Office de la mission et de l’évangélisation",
+    title: "Secrétariat pour la mission et l’évangélisation",
     description: "Animation de la mission pastorale et de l’annonce de l’Évangile.",
   },
   {
     number: "04",
-    title: "Office de la Justice, Paix et Intégrité de la Création (JPIC)",
+    title: "Commission Justice, Paix et Intégrité de la Création (JPIC)",
     description: "Engagement pour la paix, la justice et le respect de la création.",
   },
   {
     number: "05",
-    title: "Office de la Protection des Mineurs et Personnes Vulnérables",
-    description: "Office provincial dédié à la protection des personnes vulnérables.",
+    title: "Commission de la protection des mineurs et des personnes vulnérables",
+    description: "Engagement provincial pour la protection des mineurs et des personnes vulnérables.",
   },
   {
     number: "06",
-    title: "Office de la Ferme Agro-Pastorale de Muanzangudia",
-    description: "Œuvre agro-pastorale de la Province à Muanzangudia.",
+    title: "Économat provincial",
+    description: "Gestion et accompagnement des ressources de la Province.",
   },
   {
     number: "07",
-    title: "Office de la Conseillerie des Écoles Franciscaines",
-    description: "Coordination des engagements éducatifs franciscains.",
+    title: "Bureau provincial de développement",
+    description: "Coordination des initiatives de développement de la Province.",
   },
   {
     number: "08",
-    title: "Office du Centre Hospitalier Rieti",
-    description: "Œuvre de santé de la Province.",
+    title: "Ferme agro-pastorale de Muanzangudia",
+    description: "Œuvre agro-pastorale de la Province à Muanzangudia.",
   },
   {
     number: "09",
-    title: "Office la FaFra",
-    description: "Office provincial FaFra.",
+    title: "Conseillerie des écoles franciscaines",
+    description: "Coordination des engagements éducatifs franciscains.",
   },
   {
     number: "10",
-    title: "Office de la communication",
+    title: "Centre hospitalier Rieti",
+    description: "Œuvre de santé de la Province.",
+  },
+  {
+    number: "11",
+    title: "Commission de la FaFra",
+    description: "Commission provinciale de la FaFra.",
+  },
+  {
+    number: "12",
+    title: "Commission de la communication",
     description: "Communication et diffusion des informations provinciales.",
   },
+  {
+    number: "13",
+    title: "Commission Pro Monialibus",
+    description: "Accompagnement des moniales et de la vie contemplative.",
+  },
+];
+
+const fraternities = [
+  "Fraternité Sainte Élisabeth de Hongrie",
+  "Fraternité Saint François d’Assise (Lukelenge)",
+  "Fraternité Rivo Torto / Bena Cibwabwa",
+  "Fraternité Saint Bonaventure (Cibuyi)",
+  "Fraternité Fonte Colombo / Muya",
+  "Fraternité Sainte Claire / Ngandajika",
+  "Fraternité agro-pastorale / Mwanzangudia",
+  "Fraternité / Paroisse Christ Roi (Kasansa)",
+  "Fraternité / Paroisse Saint André (Lukangu)",
+  "Fraternité / Paroisse Saint Thomas (Kabinda)",
+  "Fraternité Saint Antoine de Padoue (Mwene-Ditu)",
+  "Fraternité / Paroisse Saint Charles Lwanga (Mwene-Ditu)",
+  "Fraternité Sainte Marie des Anges (Kajangayi)",
+  "Fraternité Saint Damien (Kananga)",
+  "Fraternité interprovinciale Saint Maximilien Kolbe (Lemba)",
+  "Fraternité / Paroisse Saint Grégoire le Grand (Maison filiale de Maluku)",
+  "Fraternité / Paroisse Sainte Marie porte du Ciel (Maison filiale de Badara)",
+  "Fraternité Jacopone (Quartier Congo) – Procure",
+  "Fraternité interprovinciale Saint Jean XXIII (Kolwezi)",
+  "Fraternité Notre Dame de l’Espérance (Limal / Belgique)",
+  "Fraternité Santa Maria degli Angeli (Marano di Napoli / Italie)",
+];
+
+const parishes = [
+  "Paroisse Christ Roi",
+  "Paroisse Saint André",
+  "Paroisse Saint Thomas",
+  "Paroisse Saint Charles Lwanga",
+  "Paroisse Saint Grégoire le Grand",
+  "Paroisse Sainte Marie porte du Ciel",
 ];
 
 const documents = [
@@ -158,10 +206,14 @@ export default function Home() {
         </div>
         <div className="border-y border-[#b58a58]/25 bg-white">
           <div className="mx-auto grid max-w-7xl grid-cols-3 divide-x divide-[#b58a58]/20 px-5 py-5 text-center sm:px-8 lg:px-10">
-            <div>
+            <Link
+              href="#liste-fraternites"
+              aria-label="Afficher la liste des fraternités"
+              className="rounded-sm transition-colors hover:bg-cream focus-visible:outline-blue"
+            >
               <p className="font-serif text-2xl text-burgundy sm:text-3xl">22</p>
               <p className="mt-1 text-[11px] text-ink/60 sm:text-sm">fraternités</p>
-            </div>
+            </Link>
             <div>
               <p className="font-serif text-2xl text-burgundy sm:text-3xl">13</p>
               <p className="mt-1 text-[11px] text-ink/60 sm:text-sm">paroisses</p>
@@ -214,23 +266,73 @@ export default function Home() {
           />
           <div className="mt-10 grid gap-5 md:grid-cols-2">
             <article className={cardClass}>
-              <p className="font-serif text-5xl text-burgundy sm:text-6xl">22</p>
-              <h3 className="mt-3 font-serif text-2xl text-ink">Fraternités</h3>
+              <Link
+                href="#liste-fraternites"
+                aria-label="Afficher la liste des fraternités"
+                className="inline-block rounded-sm transition-colors hover:text-blue focus-visible:outline-blue"
+              >
+                <p className="font-serif text-5xl text-burgundy sm:text-6xl">22</p>
+                <h3 className="mt-3 font-serif text-2xl text-ink">Fraternités</h3>
+              </Link>
               <p className="mt-3 leading-7 text-ink/70">
                 Chaque fraternité est un lieu de prière, de vie communautaire et
-                de mission. La liste des maisons et de leurs diocèses sera
-                publiée après validation par la Curie provinciale.
+                de mission. Cliquez sur le nombre pour consulter les noms
+                communiqués.
               </p>
             </article>
             <article className={cardClass}>
-              <p className="font-serif text-5xl text-blue sm:text-6xl">13</p>
-              <h3 className="mt-3 font-serif text-2xl text-ink">Paroisses</h3>
+              <Link
+                href="#liste-paroisses"
+                aria-label="Afficher la liste des paroisses"
+                className="inline-block rounded-sm transition-colors hover:text-burgundy focus-visible:outline-blue"
+              >
+                <p className="font-serif text-5xl text-blue sm:text-6xl">13</p>
+                <h3 className="mt-3 font-serif text-2xl text-ink">Paroisses</h3>
+              </Link>
               <p className="mt-3 leading-7 text-ink/70">
                 Ces lieux de célébration, d’évangélisation et de proximité
-                accompagnent le peuple de Dieu. Les noms et diocèses seront
-                ajoutés avec les informations officielles de la Province.
+                accompagnent le peuple de Dieu. Cliquez sur le nombre pour
+                consulter les paroisses déjà communiquées.
               </p>
             </article>
+          </div>
+          <div id="liste-fraternites" className="mt-12 scroll-mt-32">
+            <h3 className="font-serif text-3xl text-burgundy">
+              Liste des fraternités
+            </h3>
+            <p className="mt-3 max-w-3xl text-sm leading-6 text-ink/70">
+              Voici les 21 noms transmis. Le 22e nom annoncé reste à confirmer
+              auprès de la Curie provinciale.
+            </p>
+            <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {fraternities.map((fraternity) => (
+                <li
+                  key={fraternity}
+                  className="border-l-2 border-[#b58a58] bg-paper p-4 text-sm leading-6 text-ink/80"
+                >
+                  {fraternity}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div id="liste-paroisses" className="mt-12 scroll-mt-32">
+            <h3 className="font-serif text-3xl text-burgundy">
+              Paroisses confiées aux Frères Mineurs
+            </h3>
+            <p className="mt-3 max-w-3xl text-sm leading-6 text-ink/70">
+              Voici les 6 paroisses dont les noms ont été communiqués. Les noms
+              des 7 autres restent à confirmer auprès de la Curie provinciale.
+            </p>
+            <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {parishes.map((parish) => (
+                <li
+                  key={parish}
+                  className="border-l-2 border-blue bg-paper p-4 text-sm leading-6 text-ink/80"
+                >
+                  {parish}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
@@ -280,16 +382,16 @@ export default function Home() {
           <SectionHeading
             eyebrow="Formation"
             title="Grandir dans la vie franciscaine"
-            description="Les maisons de formation accueillent les jeunes frères en chemin vers la profession solennelle, dans un esprit de discernement et de croissance spirituelle."
+            description="Le parcours de formation franciscaine comprend l’aspirandat, le postulat, le noviciat et le scolasticat."
           />
-          <ol className="mt-10 grid gap-4 sm:grid-cols-3">
-            {["Postulat", "Noviciat", "Scolasticat"].map((step, index) => (
+          <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {["Aspirandat", "Postulat", "Noviciat", "Scolasticat"].map((step, index) => (
               <li
                 key={step}
                 className="flex min-h-36 flex-col justify-between border-t-2 border-blue bg-paper p-6"
               >
                 <span className="text-xs font-semibold text-blue">
-                  ÉTAPE 0{index + 1}
+                  {index === 0 ? "ÉTAPE PRÉPARATOIRE" : `ÉTAPE 0${index}`}
                 </span>
                 <span className="font-serif text-2xl text-burgundy">{step}</span>
               </li>
@@ -302,10 +404,13 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <SectionHeading
             eyebrow="Curie et organisation"
-            title="Offices et secrétariats"
+            title="Définitoire provincial"
             description="Les offices provinciaux accompagnent les frères et les œuvres dans leurs missions respectives."
           />
-          <div className="mt-10 grid gap-x-8 md:grid-cols-2 lg:grid-cols-3">
+          <h3 className="mt-10 font-serif text-2xl text-burgundy">
+            Offices et secrétariats
+          </h3>
+          <div className="mt-4 grid gap-x-8 md:grid-cols-2 lg:grid-cols-3">
             {offices.map((office) => (
               <article
                 key={office.number}
@@ -405,7 +510,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="don" className="bg-cream px-5 py-14 sm:px-8 sm:py-20">
+      <section className="bg-cream px-5 py-14 sm:px-8 sm:py-20">
         <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-[1fr_auto] md:items-center">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue">
@@ -421,10 +526,10 @@ export default function Home() {
             </p>
           </div>
           <Link
-            href="mailto:ofmsmasepro@gmail.com?subject=Soutenir%20la%20mission%20de%20la%20Province"
+            href="/dons"
             className="inline-flex min-h-12 items-center justify-center rounded-sm bg-blue px-6 font-semibold text-white transition-colors hover:bg-blue-deep"
           >
-            Contacter la Curie pour un don
+            Découvrir comment soutenir la Province
           </Link>
         </div>
       </section>
