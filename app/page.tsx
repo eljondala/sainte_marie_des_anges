@@ -101,6 +101,13 @@ const parishes = [
   "Paroisse Saint Charles Lwanga",
   "Paroisse Saint Grégoire le Grand",
   "Paroisse Sainte Marie porte du Ciel",
+  "Paroisse Saint Robert de Kansele",
+  "Paroisse Saint Victor",
+  "Paroisse Sainte Famille",
+  "Paroisse Sainte Albertine",
+  "Paroisse Saint Rémy",
+  "Paroisse Saint François d’Assise",
+  "Paroisse Saint Georges",
 ];
 
 const documents = [
@@ -207,21 +214,29 @@ export default function Home() {
         <div className="border-y border-[#b58a58]/25 bg-white">
           <div className="mx-auto grid max-w-7xl grid-cols-3 divide-x divide-[#b58a58]/20 px-5 py-5 text-center sm:px-8 lg:px-10">
             <Link
-              href="#liste-fraternites"
+              href="/presence#fraternites"
               aria-label="Afficher la liste des fraternités"
               className="rounded-sm transition-colors hover:bg-cream focus-visible:outline-blue"
             >
               <p className="font-serif text-2xl text-burgundy sm:text-3xl">22</p>
               <p className="mt-1 text-[11px] text-ink/60 sm:text-sm">fraternités</p>
             </Link>
-            <div>
+            <Link
+              href="/presence#paroisses"
+              aria-label="Afficher la liste des paroisses"
+              className="rounded-sm transition-colors hover:bg-cream focus-visible:outline-blue"
+            >
               <p className="font-serif text-2xl text-burgundy sm:text-3xl">13</p>
               <p className="mt-1 text-[11px] text-ink/60 sm:text-sm">paroisses</p>
-            </div>
-            <div>
+            </Link>
+            <Link
+              href="/presence#freres"
+              aria-label="Afficher les informations sur les frères"
+              className="rounded-sm transition-colors hover:bg-cream focus-visible:outline-blue"
+            >
               <p className="font-serif text-2xl text-burgundy sm:text-3xl">135+</p>
               <p className="mt-1 text-[11px] text-ink/60 sm:text-sm">frères</p>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
@@ -320,8 +335,7 @@ export default function Home() {
               Paroisses confiées aux Frères Mineurs
             </h3>
             <p className="mt-3 max-w-3xl text-sm leading-6 text-ink/70">
-              Voici les 6 paroisses dont les noms ont été communiqués. Les noms
-              des 7 autres restent à confirmer auprès de la Curie provinciale.
+              Voici les 13 paroisses dont les noms ont été communiqués.
             </p>
             <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {parishes.map((parish) => (
